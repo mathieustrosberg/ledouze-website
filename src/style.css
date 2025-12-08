@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  --white: #F2F0EB;
+  --green: #788478;
+  --black: #11111185;
+  --grey: #2B2B2B;
+}
+
+@theme {
+  --font-sans: "NM Regular", sans-serif;
+  --font-mono: "NM Mono", monospace;
+
+  --font-nm-regular: "NM Regular", sans-serif;
+  --font-nm-medium: "NM Medium", sans-serif;
+}
+
+@font-face {
+  font-family: "NM Regular";
+  src: url("./assets/fonts/nm-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NM Medium";
+  src: url("./assets/fonts/nm-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NM Mono";
+  src: url("./assets/fonts/nm-mono.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Container de la liste */
+.preview-container {
+  width: 100%;
+}
+
+.preview-list {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+/* Header de la liste (Lieu / Temps) */
+.preview-item__row.tabelt--hide {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* L'item */
+.preview-item {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.preview-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.preview-item__inner {
+  display: block;
+  padding: 2rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.3s ease;
+}
+
+.preview-item__inner:hover {
+  padding-left: 1rem;
+}
+
+.preview-item__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-item__heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.preview-item__text {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* L'image dans l'item (cachée par défaut, sert de source pour le clone) */
+.preview-item__visual {
+  display: none;
+}
+
+/* --- LE CURSEUR (Desktop uniquement) --- */
+.preview-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20em;
+  aspect-ratio: 1 / 1.25;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 0.75em;
+  overflow: hidden;
+
+  /* Centrage */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* L'intérieur du curseur (pour l'échelle/opacité) */
+.preview-follower__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.1s, transform 0.6s cubic-bezier(0.65, 0.1, 0, 1);
+}
+
+/* L'image clonée dans le curseur */
+.preview-follower [data-follower-visual] {
+  display: block;
+  /* On l'affiche ici */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* S'assurer que le curseur apparaît au survol */
+body:has([data-follower-collection]:hover) .preview-follower__inner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* S'assurer que les items non survolés s'estompent un peu */
+body:has(.preview-item:hover) .preview-item:not(:hover) {
+  opacity: 0.3;
+}
+
+/* Styles Mobile (Masquer le suiveur, afficher les images en statique si souhaité) */
+@media screen and (max-width: 991px) {
+  .preview-follower {
+    display: none;
+  }
+
+  .preview-item__visual {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .preview-item__inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .tabelt--hide {
+    display: none;
+  }
+}
+
+.footer-wrap__dark {
+  opacity: 0;
+  pointer-events: none;
+  background-color: #201d1d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+footer {
+  position: relative;
+  z-index: 0;
+}

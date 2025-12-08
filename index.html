@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet">
+  <title>ledouze-website</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- HEADER -->
+    <section
+      class="min-h-dvh flex flex-col justify-between px-6 md:px-12 py-6 md:py-12 relative overflow-hidden text-white">
+      <!-- Background Video -->
+      <video autoplay loop muted playsinline
+        class="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-75">
+        <source src="https://framerusercontent.com/assets/b0MCHKyxCogsLlrolRnEnoL01I.mp4" type="video/mp4">
+      </video>
+
+      <nav class="flex items-center justify-between w-full">
+        <h2 class="text-xl font-bold uppercase font-nm-medium leading-none">
+          LE 12<br>
+          <span class="text-xs md:text-sm tracking-widest"></span>DUNKERQUE</span>
+        </h2>
+        <button class="bg-white text-black border-none mix-blend-normal 
+                px-6 py-3 
+                font-nm-mono text-xs tracking-[0.1em] uppercase 
+                cursor-pointer 
+                transition-transform duration-300 ease-in-out
+                hover:translate-x-[5px]" data-open-contact>Contact →</button>
+      </nav>
+      <div class="w-full">
+        <h1 class="indent-[20%] text-4xl md:text-7xl font-bold uppercase tracking-tighter max-w-2xl font-nm-medium">
+          Journées professionnelles clé en main
+        </h1>
+      </div>
+    </section>
+
+    <!-- CONCEPTS -->
+    <section class="w-full min-h-dvh bg-white px-6 md:px-12 py-6 md:py-12 pt-24 pb-0 md:pt-48 md:pb-0">
+      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
+
+        <div class="w-full md:w-[20%] pt-2">
+          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
+            / L'esprit du 12
+          </span>
+        </div>
+
+        <div class="w-full md:w-[70%]">
+          <div
+            class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
+            data-text-reveal>
+            <p class="mb-8">
+              De l’extérieur, le 12 ressemble à un ancien garage de quartier, brut, presque invisible. D’ailleurs, c’en
+              est un. On passe devant sans y prêter attention, sans imaginer une seconde ce qui se joue derrière la
+              porte.
+            </p>
+            <p class="mb-8">
+              Une fois la porte franchie, on découvre un espace de travail entièrement réinventé pour des journées
+              professionnelles : séminaires, ateliers, comités de direction, formations, lancements de produit ou
+              présentations en petit comité. L’idée est simple : réutiliser un bâtiment laissé de côté et ne toucher
+              qu’à ce qui doit l’être – sécuriser, chauffer, isoler, apporter du confort – tout en laissant le reste
+              dans son jus.
+            </p>
+            <p>
+              C’est un lieu vivant : il peut arriver qu’un street-artist laisse une pièce sur un mur ou au plafond. De
+              dehors, rien n’indique vraiment ce qui se passe ici ; dedans, tout est pensé pour accueillir les équipes,
+              travailler, se retrouver, manger et déconnecter de l’open space habituel.
+            </p>
+
+            <div class="mt-12 w-full aspect-[4/3] md:aspect-video bg-neutral-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2800&auto=format&fit=crop"
+                alt="L'espace Le Douze" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
+          indent-[8%] mb-6 md:mb-12 pt-24 pb-12 md:pt-48 md:pb-24" data-text-reveal>
+        Concentrez-vous<br />sur votre journée,<br />on gère la logistique.
+      </h1>
+
+      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
+
+        <div class="w-full md:w-[20%] pt-2">
+          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
+            / Mission
+          </span>
+        </div>
+
+        <div class="w-full md:w-[70%]">
+          <div
+            class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
+            data-text-reveal>
+            <p class="mb-8">
+              Au 12, on accueille vos équipes pour vos journées et demi-journées professionnelles : séminaires,
+              formations, ateliers de travail, comités de direction, lancements de projet, etc. Vous choisissez d’abord
+              : demi-journée ou journée, salle seule ou salle + restauration. Ensuite, vous ajoutez à la carte les temps
+              qui vous intéressent : petit-déjeuner, déjeuner, pause de l’après-midi, verre de clôture.<br />Notre
+              mission :
+              préparer l’espace, la technique et la restauration pour que vos équipes n’aient plus qu’à arriver,
+              travailler et profiter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY CARDS -->
+    <section class="min-h-dvh flex flex-col justify-between px-6 md:px-12 py-6 md:py-12 bg-red-100 text-black">
+    </section>
+
+    <!-- NOS FORMULES -->
+    <section id="formulas-trigger" data-bgcolor="dark" class="bg-[var(--grey)] text-[var(--white)] py-[10vh] px-[5vw]">
+      <div class="mb-20">
+        <h2 data-text-reveal
+          class="text-white font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl">
+          Nos Formules
+        </h2>
+      </div>
+      <div class="grid gap-8 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <article
+          class="bg-[var(--white)] text-[var(--black)] rounded-[4px] flex flex-col justify-between min-h-[500px] transition-transform duration-300 overflow-hidden hover:-translate-y-[10px]">
+          <div class="flex flex-col flex-grow p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="text-xl text-[#555]">✦</span>
+              <h3 class="font-nm-medium text-2xl m-0">Location Simple - Salle seule</h3>
+            </div>
+
+            <p class="text-base text-[#555] mb-12 leading-snug">
+              Pour vos réunions, ateliers ou comités de direction qui ne nécessitent que l’espace de travail.
+
+            </p>
+
+            <div
+              class="flex justify-between border-t border-black/10 pt-4 mb-8 font-mono text-[0.75rem] text-[#999] tracking-[0.05em]">
+              <span>/ INCLUS</span>
+            </div>
+            <ul class="list-none p-0 m-0 flex flex-col gap-3">
+              <li class="text-base font-medium">
+                Eau, café, thé (boissons chaudes et froides à volonté)
+              </li>
+              <li class="text-base font-medium">Écran</li>
+              <li class="text-base font-medium">Système son</li>
+              <li class="text-base font-medium">Wifi</li>
+              <li class="text-base font-medium">Mobilier</li>
+              <li class="text-base font-medium">Cuisine de service mise à disposition</li>
+            </ul>
+
+            <div
+              class="flex justify-between border-t border-black/10 pt-4 mb-8 mt-8 font-mono text-[0.75rem] text-[#999] tracking-[0.05em]">
+              <span>/ TARIFS</span>
+            </div>
+
+            <ul class="list-none p-0 m-0 flex flex-col gap-4">
+              <li class="flex justify-between items-center">
+                <span class="text-base font-medium text-[#555]">Demi-journée <span
+                    class="text-sm text-[#999] font-normal">(8h–12h)</span></span>
+                <span class="text-2xl font-nm-medium text-[#2B2B2B]">400 € <span
+                    class="text-xs font-sans font-normal text-[#999]">TTC</span></span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-base font-medium text-[#555]">Journée <span
+                    class="text-sm text-[#999] font-normal">(8h–18h)</span></span>
+                <span class="text-2xl font-nm-medium text-[#2B2B2B]">800 € <span
+                    class="text-xs font-sans font-normal text-[#999]">TTC</span></span>
+              </li>
+            </ul>
+
+          </div>
+
+          <button data-open-contact
+            class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
+            <span>En savoir plus</span>
+            <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
+              →
+            </span>
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="bg-[var(--white)] text-[var(--black)] rounded-[4px] flex flex-col justify-between min-h-[500px] transition-transform duration-300 overflow-hidden hover:-translate-y-[10px]">
+          <div class="flex flex-col flex-grow p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="text-xl text-[#555]">✹</span>
+              <h3 class="font-nm-medium text-2xl m-0">Packs séminaires à l’année – Salle seule</h3>
+            </div>
+
+            <p class="text-base text-[#555] mb-12 leading-snug">
+              Pour les entreprises qui reviennent régulièrement au 12 et veulent un cadre clair pour l’année.
+            </p>
+
+            <div
+              class="flex justify-between border-t border-black/10 pt-4 mb-8 font-mono text-[0.75rem] text-[#999] tracking-[0.05em]">
+              <span>/ INCLUS</span>
+            </div>
+
+            <ul class="list-none p-0 m-0 flex flex-col gap-3">
+              <li class="text-base font-medium">Eau, café, thé à volonté</li>
+              <li class="text-base font-medium">Écran</li>
+              <li class="text-base font-medium">Système son</li>
+              <li class="text-base font-medium">Wifi</li>
+              <li class="text-base font-medium">Mobilier</li>
+              <li class="text-base font-medium">Cuisine de service mise à disposition</li>
+            </ul>
+
+            <div
+              class="flex justify-between border-t border-black/10 pt-4 mb-8 mt-8 font-mono text-[0.75rem] text-[#999] tracking-[0.05em]">
+              <span>/ TARIFS</span>
+            </div>
+
+            <ul class="list-none p-0 m-0 flex flex-col gap-6">
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Pack 6 journées</span>
+                  <span class="text-2xl font-nm-medium text-[#2B2B2B] whitespace-nowrap">4 000 € <span
+                      class="text-xs font-sans font-normal text-[#999]">TTC</span></span>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">→ 6 dates dans l’année, 5 facturées, 1 offerte</p>
+              </li>
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Pack 12 journées</span>
+                  <span class="text-2xl font-nm-medium text-[#2B2B2B] whitespace-nowrap">8 000 € <span
+                      class="text-xs font-sans font-normal text-[#999]">TTC</span></span>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">→ 12 dates dans l’année, 10 facturées, 2 offertes</p>
+              </li>
+            </ul>
+
+            <p class="text-xs text-[#999] italic mt-6 pt-4 border-t border-black/5 leading-relaxed">
+              Packs possibles aussi en demi-journées, sur la même logique (5 payées + 1 offerte, 10 payées + 2
+              offertes).
+            </p>
+
+          </div>
+
+          <button data-open-contact
+            class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
+            <span>En savoir plus</span>
+            <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
+              →
+            </span>
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="bg-[var(--white)] text-[var(--black)] rounded-[4px] flex flex-col justify-between min-h-[500px] transition-transform duration-300 overflow-hidden hover:-translate-y-[10px]">
+          <div class="flex flex-col flex-grow p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="text-xl text-[#555]">❖</span>
+              <h3 class="font-nm-medium text-2xl m-0">Option Restauration – À la carte</h3>
+            </div>
+
+            <p class="text-base text-[#555] mb-12 leading-snug">
+              Toutes les prestations de restauration sont assurées par nos partenaires extérieurs (traiteurs,
+              boulangers, restaurateurs).
+              Aucun plat n’est cuisiné sur place au 12 : nous assurons uniquement la mise en place et le service dans le
+              loft.
+            </p>
+
+            <div
+              class="flex justify-between border-t border-black/10 pt-4 mb-8 font-mono text-[0.75rem] text-[#999] tracking-[0.05em]">
+              <span>/ TARIFS</span>
+            </div>
+
+            <ul class="list-none p-0 m-0 flex flex-col gap-6">
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Petit-déjeuner</span>
+                  <div class="text-right">
+                    <span class="text-sm text-[#999] font-normal mr-1">dès</span>
+                    <span class="text-xl font-nm-medium text-[#2B2B2B]">10 €</span>
+                    <span class="text-xs font-sans font-normal text-[#999]">TTC/pers</span>
+                  </div>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">Viennoiseries, pain, beurre, confitures, jus de fruits,
+                  boissons chaudes</p>
+              </li>
+
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Déjeuner</span>
+                  <div class="text-right">
+                    <span class="text-sm text-[#999] font-normal mr-1">dès</span>
+                    <span class="text-xl font-nm-medium text-[#2B2B2B]">20 €</span>
+                    <span class="text-xs font-sans font-normal text-[#999]">TTC/pers</span>
+                  </div>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">Formule plat + dessert (ou entrée + plat), eau incluse
+                </p>
+              </li>
+
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Goûter <span
+                      class="text-sm text-[#999] font-normal">(pause après-midi)</span></span>
+                  <div class="text-right">
+                    <span class="text-sm text-[#999] font-normal mr-1">dès</span>
+                    <span class="text-xl font-nm-medium text-[#2B2B2B]">10 €</span>
+                    <span class="text-xs font-sans font-normal text-[#999]">TTC/pers</span>
+                  </div>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">Mignardises sucrées / salées, jus, boissons chaudes</p>
+              </li>
+
+              <li class="flex flex-col gap-1">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-base font-medium text-[#555]">Verre de clôture</span>
+                  <div class="text-right">
+                    <span class="text-sm text-[#999] font-normal mr-1">dès</span>
+                    <span class="text-xl font-nm-medium text-[#2B2B2B]">15 €</span>
+                    <span class="text-xs font-sans font-normal text-[#999]">TTC/pers</span>
+                  </div>
+                </div>
+                <p class="text-sm text-[#777] leading-tight m-0">Verre de vin / bière ou soft + planches apéro à
+                  partager</p>
+              </li>
+            </ul>
+
+            <p class="text-xs text-[#999] italic mt-6 pt-4 border-t border-black/5 leading-relaxed">
+              Les boissons alcoolisées sont fournies par nos partenaires habilités. L’alcool est à consommer avec
+              modération.
+            </p>
+          </div>
+
+          <button data-open-contact
+            class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
+            <span>En savoir plus</span>
+            <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
+              →
+            </span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY PIC -->
+    <section class="">
+      <div class="sticky-cards relative w-full h-full bg-[var(--grey)]">
+        <!-- Les cartes seront injectées ici par JS, ou vous pouvez les mettre en dur comme ceci : -->
+        <!-- Exemple de carte -->
+        <!-- 
+  <div class="sticky-card relative w-full h-[100svh] will-change-transform" style="background-color: #FF6B6B;">
+     <div class="overlay absolute inset-0 bg-black/50 pointer-events-none z-10 transition-opacity duration-100 opacity-[var(--after-opacity,0)]"></div>
+  </div> 
+  -->
+      </div>
+    </section>
+
+
+
+
+    <!-- LOCALISATION -->
+    <section class="w-full min-h-dvh bg-white px-6 md:px-12 py-6 md:py-12 pt-24 pb-0 md:pt-48 md:pb-0">
+      <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
+          indent-[8%] mb-6 md:mb-12 pt-24 pb-12 " data-text-reveal>
+        Au coeur de tout
+      </h1>
+
+      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
+
+        <div class="w-full md:w-[20%] pt-2">
+          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
+            / Localisation
+          </span>
+        </div>
+
+        <div class="w-full md:w-[70%]">
+          <div
+            class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
+            data-text-reveal>
+            <p class="mb-8">
+              Idéalement situé en plein centre de Dunkerque, le 12 se trouve à quelques minutes à pied de la gare, des
+              hôtels et des principales rues commerçantes.
+              Vos équipes arrivent en train, en bus ou en voiture, puis terminent le trajet à pied depuis la gare,
+              l’arrêt de bus ou les parkings voisins.
+              Plusieurs parkings publics se trouvent autour du lieu et l’ensemble du réseau de bus de Dunkerque est
+              gratuit. Des taxis sont également disponibles en continu devant la gare.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mt-12 md:mt-24">
+        <div class="hidden md:block w-full md:w-[20%]"></div>
+        <div class="w-full md:w-[70%]">
+          <div data-follower-wrap class="preview-container ">
+            <!-- En-têtes -->
+            <div class="preview-item__row tabelt--hide">
+              <div class="preview-item__col is--large"><span class="preview-container__label">Lieu</span></div>
+              <div class="preview-item__col is--small"><span class="preview-container__label">Temps</span></div>
+            </div>
+            <!-- La liste des items -->
+            <div data-follower-collection class="preview-collection">
+              <div class="preview-list">
+                <!-- Item 1: Gare -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Gare de Dunkerque</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">5 min à pied</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Gare de Dunkerque">
+                    </div>
+                  </a>
+                </div>
+                <!-- Item 2: Centre-ville -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Centre-ville piéton</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">2 min à pied</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Centre-ville piéton">
+                    </div>
+                  </a>
+                </div>
+                <!-- Item 3: Parking Théâtre -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Parking du Théâtre</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">3 min à pied</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Parking du Théâtre">
+                    </div>
+                  </a>
+                </div>
+                <!-- Item 4: Parking Souterrain -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Parking souterrain (Jean-Bart)</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">5 min à pied</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Parking Jean-Bart">
+                    </div>
+                  </a>
+                </div>
+                <!-- Item 5: Plage -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Plage de Malo-les-Bains</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">10 min voiture / bus</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Plage de Malo-les-Bains">
+                    </div>
+                  </a>
+                </div>
+                <!-- Item 6: Port -->
+                <div data-follower-item class="preview-item">
+                  <a href="#" class="preview-item__inner w-inline-block">
+                    <div class="preview-item__row">
+                      <div class="preview-item__col is--large">
+                        <h2 class="preview-item__heading">Port & Musée portuaire</h2>
+                      </div>
+                      <div class="preview-item__col is--small">
+                        <p class="preview-item__text">8 min à pied</p>
+                      </div>
+                    </div>
+                    <div data-follower-visual class="preview-item__visual">
+                      <img
+                        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2800&auto=format&fit=crop"
+                        class="preview-item__visual-img" alt="Port et Musée">
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Le curseur (suiveur) -->
+            <div data-follower-cursor class="preview-follower">
+              <div data-follower-cursor-inner class="preview-follower__inner">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PARTNERS GRID -->
+    <section class="w-full text-[#2B2B2B]  pt-24 md:pt-48 pb-12 md:pb-24">
+
+      <!-- Titre Section -->
+      <div class="mb-12 md:mb-24">
+        <h2
+          class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl indent-[8%]"
+          data-text-reveal>
+          Nos Partenaires
+        </h2>
+      </div>
+
+      <!-- La Grille -->
+      <!-- On utilise border-collapse pour les bordures partagées si c'était une table, 
+           mais en grid on va gérer avec les bordures des items + margin négatif ou similar 
+           ICi astuce simple : border-t et border-l sur le container, et border-r et border-b sur les items -->
+
+      <!-- La Grille Animée -->
+      <div class="w-full border-t border-[var(--black)] border-opacity-10 overflow-hidden">
+
+        <!-- Row 1: Scroll Left -->
+        <div class="partners-row-left flex w-full border-b border-[var(--black)] border-opacity-10 overflow-hidden">
+          <!-- Content wrapper for animation -->
+          <div class="partners-track flex shrink-0 will-change-transform">
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Google</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Spotify</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Nike</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Arte</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Scroll Right -->
+        <div class="partners-row-right flex w-full border-b border-[var(--black)] border-opacity-10 overflow-hidden">
+          <!-- Content wrapper for animation -->
+          <div class="partners-track flex shrink-0 will-change-transform">
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Havas</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Ubisoft</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Canal+</span>
+            </div>
+            <div
+              class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
+              <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Dunk.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div data-footer-parallax class="relative overflow-hidden">
+      <footer id="contact" data-footer-parallax-inner
+        class="bg-[var(--grey)] text-[var(--white)] min-h-[80vh] p-[5vw] pt-[15vh] pb-[5vh] relative flex flex-col justify-between px-8">
+
+        <!-- Top content -->
+        <div class="flex flex-col md:flex-row justify-between gap-[5vw] w-full items-start">
+
+          <!-- Title & CTA -->
+          <div class="flex flex-col gap-12 max-w-3xl">
+            <h2 data-text-reveal class="font-bold text-[clamp(2.5rem,5vw,5rem)] leading-[1.1] tracking-tight">
+              Créez votre moment,<br />on s’occupe du reste.
+            </h2>
+
+            <button data-open-contact
+              class="bg-[var(--white)] text-[var(--black)] border-none px-8 py-4 font-nm-mono text-xs tracking-[0.1em] uppercase cursor-pointer transition-transform duration-300 ease-in-out hover:translate-x-[5px] w-fit">
+              Nous contacter →
+            </button>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="flex flex-col gap-12 md:text-right mt-12 md:mt-0">
+            <div class="flex flex-col gap-2">
+              <span class="font-mono text-[0.65rem] tracking-[0.15em] opacity-40 uppercase">Email</span>
+              <a href="mailto:contact@le12dunkerque.com"
+                class="text-xl md:text-2xl font-nm-regular hover:opacity-60 transition-opacity">
+                contact@le12dunkerque.com
+              </a>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <span class="font-mono text-[0.65rem] tracking-[0.15em] opacity-40 uppercase">Téléphone</span>
+              <a href="tel:+33600000000"
+                class="text-xl md:text-2xl font-nm-regular hover:opacity-60 transition-opacity">
+                +33 6 00 00 00 00
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom footer -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6 mt-24 pt-8 border-t border-white/10 opacity-60">
+          <span class="font-mono text-[0.7rem] tracking-[0.1em] uppercase">
+            © 2025 Le Douze Dunkerque
+          </span>
+
+          <div class="flex gap-8">
+            <a href="#"
+              class="text-[var(--white)] no-underline font-mono text-[0.7rem] tracking-[0.1em] uppercase transition-colors hover:text-white">
+              Mentions légales
+            </a>
+            <a href="#"
+              class="text-[var(--white)] no-underline font-mono text-[0.7rem] tracking-[0.1em] uppercase transition-colors hover:text-white">
+              Conditions d'utilisation
+            </a>
+          </div>
+        </div>
+        <div data-footer-parallax-dark
+          class="opacity-0 pointer-events-none bg-black w-full h-full absolute top-0 left-0 z-10"></div>
+      </footer>
+
+
+      <!-- Contact Popup 
+     Note: On utilise la classe 'group' sur le parent pour piloter les enfants quand 'is-open' est présent.
+-->
+      <div
+        class="contact-popup group fixed inset-0 z-[1000] flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none [&.is-open]:opacity-100 [&.is-open]:pointer-events-auto"
+        data-contact-popup>
+
+        <!-- Overlay : Fond noir flou -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" data-close-contact></div>
+
+        <!-- Contenu de la modal -->
+        <div data-lenis-prevent
+          class="relative bg-white text-gray-900 w-[90%] max-w-[700px] max-h-[90vh] overflow-y-auto p-8 md:p-16 rounded shadow-2xl translate-y-8 transition-transform duration-300 group-[.is-open]:translate-y-0">
+
+          <!-- Bouton Fermer -->
+          <button class="absolute top-8 right-8 text-3xl hover:opacity-60 transition-opacity"
+            data-close-contact>✕</button>
+          <!-- Header -->
+          <div class="mb-12">
+            <h2 class="text-3xl md:text-5xl font-medium mb-4 leading-tight">Réservez votre événement</h2>
+            <p class="opacity-70 text-lg">Remplissez ce formulaire et nous vous recontacterons dans les plus brefs
+              délais.</p>
+          </div>
+          <!-- Formulaire -->
+          <form class="flex flex-col gap-6">
+            <!-- Rangée 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Nom complet *</label>
+                <input type="text" required placeholder="Jean Dupont"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Entreprise</label>
+                <input type="text" placeholder="Nom de l'entreprise"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+            </div>
+            <!-- Rangée 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Email *</label>
+                <input type="email" required placeholder="jean@exemple.fr"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Téléphone</label>
+                <input type="tel" placeholder="+33 6 12 34 56 78"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+            </div>
+            <!-- Select -->
+            <div class="flex flex-col gap-2">
+              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Type d'événement</label>
+              <select
+                class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full appearance-none">
+                <option>Sélectionnez une formule</option>
+                <option>Location Sèche</option>
+                <option>Journée d'Étude</option>
+                <option>Full Experience</option>
+              </select>
+            </div>
+            <!-- Rangée 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Date souhaitée</label>
+                <input type="date"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Horaire souhaité</label>
+                <input type="time" placeholder="Ex: 14:00"
+                  class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Nombre de participants</label>
+              <input type="number" placeholder="Ex: 50"
+                class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Message</label>
+              <textarea rows="4" placeholder="Décrivez-nous votre projet..."
+                class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full"></textarea>
+            </div>
+            <button type="submit"
+              class="mt-4 bg-gray-900 text-white border-none py-5 px-10 uppercase tracking-widest font-semibold hover:opacity-80 transition-opacity cursor-pointer">Envoyer
+              la demande</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
