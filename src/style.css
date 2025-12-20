@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-html {
-  overflow-x: hidden;
+html, body {
+  overflow-x: clip;
 }
 
 :root {
