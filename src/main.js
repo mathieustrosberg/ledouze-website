@@ -223,6 +223,26 @@ function initStickyFeature() {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 0px)", () => {
+        // Explicitly set initial states to ensure consistency
+        visuals.forEach((v, i) => {
+            if (i === 0) {
+                 gsap.set(v, { clipPath: 'inset(0% 0% 0% 0%)' });
+            } else {
+                 gsap.set(v, { clipPath: 'inset(100% 0% 0% 0%)' });
+            }
+        });
+        
+        items.forEach((item, i) => {
+             if (i === 0) {
+                 gsap.set(item, { opacity: 1 });
+                 // Ensure children are visible
+                 gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 1, y: 0 });
+             } else {
+                 gsap.set(item, { opacity: 0 });
+                 gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 0, y: 30 });
+             }
+        });
+
         // Pin the entire section
         const tl = gsap.timeline({
             scrollTrigger: {
