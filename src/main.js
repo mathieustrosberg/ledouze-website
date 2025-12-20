@@ -19,7 +19,13 @@ const stickyCardsData = [
 ];
 
 // Initialisation GSAP & Lenis globale
+import { initLoader } from './Loader.js';
+
 gsap.registerPlugin(ScrollTrigger);
+
+document.addEventListener("DOMContentLoaded", () => {
+    initLoader();
+});
 
 let lenis;
 // 1. Initialisation de Lenis pour le smooth scroll

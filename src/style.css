@@ -197,3 +197,105 @@ footer {
   position: relative;
   z-index: 0;
 }
+
+/* --- Loader CSS --- */
+.loader {
+    z-index: 9999;
+    color: var(--white);
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+}
+.loader__bg {
+    background-color: var(--grey);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+.loader__container {
+    z-index: 2;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+.loader__bg-bar {
+    z-index: 1;
+    transform-origin: 0%;
+    transform-style: preserve-3d;
+    background-color: var(--white);
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    inset: auto 0% 0%;
+    transform: scaleX(0);
+}
+.loader__logo-wrap {
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.loader__logo-item {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader__logo-item.is--base {
+    opacity: 0.1;
+    position: relative;
+}
+.loader__logo-item.is--top {
+    clip-path: inset(0% 100% 0% 0%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.loader__logo-text {
+    font-family: 'NM Medium', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--white);
+    white-space: nowrap;
+}
+.loader__text-wrap {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    bottom: 3.5em;
+    width: 100%;
+    height: 1.5em;
+    overflow: hidden;
+}
+.loader__text-el {
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'NM Mono', monospace;
+    font-size: 0.875rem;
+    position: absolute;
+    letter-spacing: 0.05em;
+}
+[data-load-reset] {
+    opacity: 0;
+}
