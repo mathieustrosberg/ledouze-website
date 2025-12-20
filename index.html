@@ -80,7 +80,7 @@
       </div>
 
       <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
-          indent-[8%] mb-6 md:mb-12 pt-24 pb-12 md:pt-48 md:pb-24" data-text-reveal>
+          indent-[8%] mb-6 md:mb-12 pt-24 pb-24 md:pt-48 md:pb-48" data-text-reveal>
         Concentrez-vous<br />sur votre journée,<br />on gère la logistique.
       </h1>
 
@@ -110,9 +110,142 @@
       </div>
     </section>
 
-    <!-- STICKY CARDS -->
-    <section class="min-h-dvh flex flex-col justify-between px-6 md:px-12 py-6 md:py-12 bg-red-100 text-black">
+
+
+
+
+    <!-- STICKY CARDS FEATURE -->
+    <section class="bg-white text-[#1A1A1A] font-nm-regular" data-sticky-feature-wrap>
+      <div class="relative w-full">
+        <!-- Container principal avec padding pour mobile et desktop -->
+        <div
+          class="flex flex-col lg:flex-row lg:h-screen items-center lg:items-center pt-[5vh] lg:pt-[10vh] pb-[5vh] lg:pb-[10vh]">
+          <div class="mx-auto grid w-[90%] max-w-[1440px] grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-[4em]">
+
+            <!-- COL GAUCHE (VISUELS) - Sticky sur Desktop -->
+            <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh] border border-[#1A1A1A] bg-[#D9D9D9] overflow-hidden">
+              <div class="relative h-full w-full">
+                <!-- ITEM 01 (visible par défaut) -->
+                <div data-sticky-feature-visual-wrap
+                  class="absolute inset-0 flex h-full w-full items-center justify-center bg-white [clip-path:inset(0%_0_0%_0)]">
+                  <div
+                    class="flex h-full w-full items-center justify-center bg-[#dcdcdc] font-mono text-[1.2rem] lg:text-[1.5rem] tracking-[2px]">
+                    <span>PLAN 01 : STRUCTURE</span>
+                  </div>
+                </div>
+
+                <!-- ITEM 02 -->
+                <div data-sticky-feature-visual-wrap
+                  class="absolute inset-0 flex h-full w-full items-center justify-center bg-white [clip-path:inset(100%_0_0%_0)]">
+                  <div
+                    class="flex h-full w-full items-center justify-center bg-[#c0c0c0] font-mono text-[1.2rem] lg:text-[1.5rem] tracking-[2px]">
+                    <span>PLAN 02 : THÉÂTRE</span>
+                  </div>
+                </div>
+
+                <!-- ITEM 03 -->
+                <div data-sticky-feature-visual-wrap
+                  class="absolute inset-0 flex h-full w-full items-center justify-center bg-white [clip-path:inset(100%_0_0%_0)]">
+                  <div
+                    class="flex h-full w-full items-center justify-center bg-[#a9a9a9] font-mono text-[1.2rem] lg:text-[1.5rem] tracking-[2px]">
+                    <span>PLAN 03 : BANQUET</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PROGRESS -->
+              <div class="absolute left-0 right-0 bottom-0 h-[4px] bg-black/10">
+                <div class="h-full w-full origin-left scale-x-0 bg-[#1A1A1A]" data-sticky-feature-progress></div>
+              </div>
+            </div>
+
+            <!-- COL DROITE (TEXTE) -->
+            <div class="relative w-full">
+              <!-- Wrapper dimensions -->
+              <div class="relative min-h-[40vh] lg:min-h-[400px] flex flex-col justify-center">
+
+                <!-- TEXTE 01 -->
+                <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-100">
+                  <span data-sticky-feature-text
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 01</span>
+
+                  <h2 data-sticky-feature-text data-text-reveal
+                    class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
+                    L'Espace Brut
+                  </h2>
+
+                  <p data-sticky-feature-text data-text-reveal
+                    class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
+                    120m² de béton et de lumière. Une structure industrielle préservée
+                    pour donner du caractère à vos événements.
+                  </p>
+
+                  <div data-sticky-feature-text
+                    class="flex w-full gap-5 border-t border-[#1A1A1A] pt-[10px] font-mono text-[0.7rem] lg:text-[0.8rem]">
+                    <span>Surface: 120m²</span>
+                    <span>HSP: 4m</span>
+                  </div>
+                </div>
+
+                <!-- TEXTE 02 -->
+                <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-0">
+                  <span data-sticky-feature-text
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 02</span>
+
+                  <h2 data-sticky-feature-text data-text-reveal
+                    class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
+                    Conférence
+                  </h2>
+
+                  <p data-sticky-feature-text data-text-reveal
+                    class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
+                    Configuration assise pour 60 personnes. Écran géant et sonorisation
+                    intégrée pour capter l'auditoire.
+                  </p>
+
+                  <div data-sticky-feature-text
+                    class="flex w-full gap-5 border-t border-[#1A1A1A] pt-[10px] font-mono text-[0.7rem] lg:text-[0.8rem]">
+                    <span>Capacité: 60 pax</span>
+                    <span>Video: 4K</span>
+                  </div>
+                </div>
+
+                <!-- TEXTE 03 -->
+                <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-0">
+                  <span data-sticky-feature-text
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 03</span>
+
+                  <h2 data-sticky-feature-text data-text-reveal
+                    class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
+                    Afterwork
+                  </h2>
+
+                  <p data-sticky-feature-text data-text-reveal
+                    class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
+                    Transformez l'espace en cocktail lounge. Mange-debout et espace
+                    traiteur pour finir en beauté.
+                  </p>
+
+                  <div data-sticky-feature-text
+                    class="flex w-full gap-5 border-t border-[#1A1A1A] pt-[10px] font-mono text-[0.7rem] lg:text-[0.8rem]">
+                    <span>Format: Cocktail</span>
+                    <span>Bar: Inclus</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </section>
+
+
+
+
+
+
+
 
     <!-- NOS FORMULES -->
     <section id="formulas-trigger" data-bgcolor="dark" class="bg-[var(--grey)] text-[var(--white)] py-[10vh] px-[5vw]">
@@ -359,9 +492,9 @@
 
 
     <!-- LOCALISATION -->
-    <section class="w-full min-h-dvh bg-white px-6 md:px-12 py-6 md:py-12 pt-24 pb-0 md:pt-48 md:pb-0">
+    <section class="w-full min-h-dvh bg-white px-[5vw] py-6 md:py-12 pt-24 pb-0 md:pt-48 md:pb-0">
       <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
-          indent-[8%] mb-6 md:mb-12 pt-24 pb-12 " data-text-reveal>
+          mb-6 md:mb-12 pt-24 pb-12" data-text-reveal>
         Au coeur de tout
       </h1>
 
@@ -528,12 +661,12 @@
     <section class="w-full text-[#2B2B2B]  pt-24 md:pt-48 pb-12 md:pb-24">
 
       <!-- Titre Section -->
-      <div class="mb-12 md:mb-24">
-        <h2
-          class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl indent-[8%]"
+      <div class="mb-12 md:mb-24 px-[5vw]">
+        <h1
+          class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl"
           data-text-reveal>
           Nos Partenaires
-        </h2>
+        </h1>
       </div>
 
       <!-- La Grille -->
@@ -596,7 +729,7 @@
     <!-- FOOTER -->
     <div data-footer-parallax class="relative overflow-hidden">
       <footer id="contact" data-footer-parallax-inner
-        class="bg-[var(--grey)] text-[var(--white)] min-h-[80vh] p-[5vw] pt-[15vh] pb-[5vh] relative flex flex-col justify-between px-8">
+        class="bg-[var(--grey)] text-[var(--white)] min-h-[80vh] p-[5vw] pt-[15vh] pb-[5vh] relative flex flex-col justify-between">
 
         <!-- Top content -->
         <div class="flex flex-col md:flex-row justify-between gap-[5vw] w-full items-start">

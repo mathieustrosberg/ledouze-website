@@ -3,6 +3,13 @@ import './style.css'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+
+// Force scroll to top on refresh
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Données des cartes (à adapter selon vos besoins)
 const stickyCardsData = [
     { img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2800&auto=format&fit=crop" },
@@ -11,17 +18,19 @@ const stickyCardsData = [
     { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2800&auto=format&fit=crop" },
 ];
 
+// Initialisation GSAP & Lenis globale
+gsap.registerPlugin(ScrollTrigger);
+
 let lenis;
+// 1. Initialisation de Lenis pour le smooth scroll
+lenis = new Lenis();
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
 
 export function initStickyCards() {
-    gsap.registerPlugin(ScrollTrigger);
-    // 1. Initialisation de Lenis pour le smooth scroll
-    lenis = new Lenis();
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
     // 2. Génération des cartes (si pas déjà dans le HTML)
     const container = document.querySelector(".sticky-cards");
 
@@ -143,11 +152,113 @@ export function initLocationPreview() {
 }
 
 // Lancer l'initialisation
-initStickyCards();
+initStickyFeature(); // Sticky Section (Plan 01/02/03)
+initStickyCards();   // Gallery Pics
 initLocationPreview();
 initRowMarquees();
 initFooterParallax();
 initContactPopup();
+initTextReveal(); // <-- Ajouter ici
+
+// Force refresh after all triggers are set up
+ScrollTrigger.refresh();
+
+function initTextReveal() {
+    // Exclude sticky feature texts from generic reveal because they are handled in the timeline
+    const texts = document.querySelectorAll('[data-text-reveal]:not([data-sticky-feature-wrap] *)');
+    texts.forEach(text => {
+        // Simple reveal from bottom with opacity
+        gsap.fromTo(text,
+            { y: 50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top 85%", // Trigger a bit earlier
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
+}
+
+
+function initStickyFeature() {
+    const wrap = document.querySelector('[data-sticky-feature-wrap]');
+    if (!wrap) return;
+
+    const visuals = wrap.querySelectorAll('[data-sticky-feature-visual-wrap]');
+    const items = wrap.querySelectorAll('[data-sticky-feature-item]');
+    const progress = wrap.querySelector('[data-sticky-feature-progress]');
+
+    // Universal Animation (Desktop & Mobile)
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 0px)", () => {
+        // Pin the entire section
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: wrap,
+                start: "top top",
+                end: "+=" + (window.innerHeight * 3),
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+            }
+        });
+
+        // Animation logic for items 2 and 3
+        visuals.forEach((visual, i) => {
+            if (i === 0) return;
+
+            // Visual Clip Transition
+            tl.to(visual, {
+                clipPath: 'inset(0% 0% 0% 0%)',
+                ease: 'none'
+            }, (i - 1));
+
+            // Text Transition of PREVIOUS item (Out)
+            tl.to(items[i - 1], {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.inOut'
+            }, (i - 1));
+
+            // Text Transition of CURRENT item (Wrapper In)
+            // We set the wrapper to opacity 1 first (or keep it visible but animate children)
+            // Actually, we need to hide the wrapper initially? 
+            // The previous logic faded the wrapper. Let's keep that but FASTER.
+            tl.to(items[i], {
+                opacity: 1,
+                duration: 0.1, // Quick fade in of wrapper
+                ease: 'power2.inOut'
+            }, (i - 1) + 0.2);
+
+            // NOW, animate the text children specifically
+            const textChildren = items[i].querySelectorAll('[data-sticky-feature-text]');
+            if (textChildren.length > 0) {
+                tl.fromTo(textChildren,
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" },
+                    (i - 1) + 0.3 // Start slightly after visual starts
+                );
+            }
+        });
+
+        // Progress bar
+        tl.to(progress, {
+            scaleX: 1,
+            ease: 'none'
+        }, 0);
+
+        return () => {
+            // Clean up if needed
+        };
+    });
+}
 
 function initRowMarquees() {
     const leftRow = document.querySelector('.partners-row-left');
