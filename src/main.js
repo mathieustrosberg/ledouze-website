@@ -23,10 +23,6 @@ import { initLoader } from './Loader.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", () => {
-    initLoader();
-});
-
 let lenis;
 // 1. Initialisation de Lenis pour le smooth scroll
 lenis = new Lenis();
@@ -35,6 +31,10 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 gsap.ticker.lagSmoothing(0);
+
+document.addEventListener("DOMContentLoaded", () => {
+    initLoader(lenis);
+});
 
 export function initStickyCards() {
     // 2. Génération des cartes (si pas déjà dans le HTML)

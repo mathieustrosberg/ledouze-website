@@ -19,12 +19,22 @@ function splitTextToChars(element) {
     return chars;
 }
 
-export function initLoader() {
+export function initLoader(lenis) {
+    // Prevent scrolling
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
+
     // Defines the custom easing
     CustomEase.create("loader", "0.65, 0.01, 0.05, 0.99");
 
     const wrap = document.querySelector("[data-load-wrap]");
-    if (!wrap) return;
+    if (!wrap) {
+        document.body.style.overflow = ''; // Release if no loader
+        document.documentElement.style.overflow = '';
+        if (lenis) lenis.start();
+        return;
+    }
 
     const container = wrap.querySelector("[data-load-container]");
     const bg = wrap.querySelector("[data-load-bg]");
@@ -45,6 +55,9 @@ export function initLoader() {
         },
         onComplete: () => {
             wrap.style.display = "none";
+            document.body.style.overflow = ''; // Re-enable scrolling
+            document.documentElement.style.overflow = '';
+            if (lenis) lenis.start();
         }
     })
     .set(wrap, { display: "block" })

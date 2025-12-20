@@ -163,12 +163,17 @@ body:has(.preview-item:hover) .preview-item:not(:hover) {
     display: none;
   }
 
+  .preview-item {
+    pointer-events: none;
+  }
+
   .preview-item__visual {
     display: block;
     width: 100%;
     margin-bottom: 1rem;
     border-radius: 0;
     overflow: hidden;
+    pointer-events: none;
   }
 
   .preview-item__inner {
