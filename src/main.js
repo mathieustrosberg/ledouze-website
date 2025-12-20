@@ -159,9 +159,34 @@ initRowMarquees();
 initFooterParallax();
 initContactPopup();
 initTextReveal(); // <-- Ajouter ici
+initParallaxImages();
 
 // Force refresh after all triggers are set up
 ScrollTrigger.refresh();
+
+function initParallaxImages() {
+    const images = document.querySelectorAll('[data-parallax-img]');
+    images.forEach(img => {
+        // Le parent doit avoir overflow: hidden (c'est le cas ici)
+        gsap.fromTo(img, 
+            {
+                scale: 1.3, // Plus grand zoom au départ
+                yPercent: -15 // Départ plus haut
+            },
+            {
+                yPercent: 15, // Arrivée plus bas
+                scale: 1.0, // Zoom out progressif pour un effet de profondeur plus marqué
+                ease: "none",
+                scrollTrigger: {
+                    trigger: img.parentElement, // On triggue sur le conteneur
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            }
+        );
+    });
+}
 
 function initTextReveal() {
     // Exclude sticky feature texts from generic reveal because they are handled in the timeline
