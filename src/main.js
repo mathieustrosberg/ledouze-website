@@ -12,10 +12,10 @@ window.scrollTo(0, 0);
 
 // Données des cartes (à adapter selon vos besoins)
 const stickyCardsData = [
-    { img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2800&auto=format&fit=crop" },
-    { img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2800&auto=format&fit=crop" },
-    { img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2800&auto=format&fit=crop" },
-    { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2800&auto=format&fit=crop" },
+    { img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop" },
+    { img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop" },
+    { img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop" },
+    { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop" },
 ];
 
 // Initialisation GSAP & Lenis globale
@@ -50,6 +50,7 @@ export function initStickyCards() {
 
             const img = document.createElement("img");
             img.src = data.img;
+            img.loading = "lazy";
             img.className = "absolute inset-0 w-full h-full object-cover";
             img.alt = "Le Douze Space";
             card.appendChild(img);

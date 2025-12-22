@@ -6,37 +6,60 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="/src/style.css" rel="stylesheet">
-  <title>ledouze-website</title>
+  <title>Le Douze - Espace Séminaire & Coworking à Dunkerque</title>
+  <meta name="description"
+    content="Le Douze : un espace unique de 200m² à Dunkerque pour vos séminaires, réunions, formations et événements d'entreprise. Location clé en main, ambiance industrielle et services premium.">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/src/assets/fonts/nm-medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://le12dunkerque.com/">
+  <meta property="og:title" content="Le Douze - Espace Séminaire & Coworking à Dunkerque">
+  <meta property="og:description"
+    content="Découvrez un lieu atypique pour vos journées professionnelles. Séminaires, ateliers, comités de direction : on s'occupe de tout.">
+  <meta property="og:image" content="https://le12dunkerque.com/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://le12dunkerque.com/">
+  <meta property="twitter:title" content="Le Douze - Espace Séminaire & Coworking à Dunkerque">
+  <meta property="twitter:description"
+    content="Découvrez un lieu atypique pour vos journées professionnelles. Séminaires, ateliers, comités de direction : on s'occupe de tout.">
+  <meta property="twitter:image" content="https://le12dunkerque.com/og-image.jpg">
 </head>
 
 <body>
   <!-- Loader -->
-<div data-load-wrap class="loader">
-  <div data-load-bg class="loader__bg">
-    <div data-load-progress class="loader__bg-bar"></div>
-  </div>
-  <div data-load-container class="loader__container">
-    <div class="loader__logo-wrap">
-      <div class="loader__logo-item is--base">
-        <div class="loader__logo-text">LE DOUZE</div>
+  <div data-load-wrap class="loader">
+    <div data-load-bg class="loader__bg">
+      <div data-load-progress class="loader__bg-bar"></div>
+    </div>
+    <div data-load-container class="loader__container">
+      <div class="loader__logo-wrap">
+        <div class="loader__logo-item is--base">
+          <div class="loader__logo-text">LE DOUZE</div>
+        </div>
+        <div data-load-logo class="loader__logo-item is--top">
+          <div class="loader__logo-text">LE DOUZE</div>
+        </div>
       </div>
-      <div data-load-logo class="loader__logo-item is--top">
-        <div class="loader__logo-text">LE DOUZE</div>
+      <div class="loader__text-wrap">
+        <span data-load-text data-load-reset class="loader__text-el">CRÉEZ VOTRE MOMENT</span>
+        <span data-load-text data-load-reset class="loader__text-el">ON S'OCCUPE DU RESTE</span>
       </div>
     </div>
-    <div class="loader__text-wrap">
-      <span data-load-text data-load-reset class="loader__text-el">CRÉEZ VOTRE MOMENT</span>
-      <span data-load-text data-load-reset class="loader__text-el">ON S'OCCUPE DU RESTE</span>
-    </div>
   </div>
-</div>
 
   <div id="app">
     <!-- HEADER -->
-    <section
-      class="min-h-dvh flex flex-col justify-between px-[5vw] py-6 md:py-12 relative overflow-hidden text-white">
+    <section class="min-h-dvh flex flex-col justify-between px-[5vw] py-6 md:py-12 relative overflow-hidden text-white">
       <!-- Background Video -->
-      <video autoplay loop muted playsinline
+      <video autoplay loop muted playsinline aria-hidden="true" tabindex="-1"
+        poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
         class="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-75">
         <source src="https://framerusercontent.com/assets/b0MCHKyxCogsLlrolRnEnoL01I.mp4" type="video/mp4">
       </video>
@@ -51,7 +74,8 @@
                 font-nm-mono text-xs tracking-[0.1em] uppercase 
                 cursor-pointer 
                 transition-transform duration-300 ease-in-out
-                hover:translate-x-[5px]" data-open-contact>Contact →</button>
+                hover:translate-x-[5px]" data-open-contact aria-label="Ouvrir le formulaire de contact">Contact
+          →</button>
       </nav>
       <div class="w-full">
         <h1 class="indent-[20%] text-4xl md:text-7xl font-bold uppercase tracking-tighter max-w-2xl font-nm-medium">
@@ -65,7 +89,7 @@
       <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
 
         <div class="w-full md:w-[20%] pt-2">
-          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
+          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#555555]" data-text-reveal>
             / L'esprit du 12
           </span>
         </div>
@@ -93,42 +117,44 @@
             </p>
 
             <div class="mt-12 w-full aspect-[4/3] md:aspect-video bg-neutral-200 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2800&auto=format&fit=crop"
-                alt="L'espace Le Douze" class="w-full h-full object-cover" data-parallax-img />
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
+                alt="L'espace Le Douze" class="w-full h-full object-cover" data-parallax-img loading="lazy" />
             </div>
           </div>
         </div>
       </div>
 
-      <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
+      <h2 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
           indent-[8%] mb-6 md:mb-12 pt-24 pb-24 md:pt-48 md:pb-48" data-text-reveal>
         Concentrez-vous<br />sur votre journée,<br />on gère la logistique.
-      </h1>
+        </h1>
 
-      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
 
-        <div class="w-full md:w-[20%] pt-2">
-          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
-            / Mission
-          </span>
-        </div>
+          <div class="w-full md:w-[20%] pt-2">
+            <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#555555]" data-text-reveal>
+              / Mission
+            </span>
+          </div>
 
-        <div class="w-full md:w-[70%]">
-          <div
-            class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
-            data-text-reveal>
-            <p class="mb-8">
-              Au 12, on accueille vos équipes pour vos journées et demi-journées professionnelles : séminaires,
-              formations, ateliers de travail, comités de direction, lancements de projet, etc. Vous choisissez d’abord
-              : demi-journée ou journée, salle seule ou salle + restauration. Ensuite, vous ajoutez à la carte les temps
-              qui vous intéressent : petit-déjeuner, déjeuner, pause de l’après-midi, verre de clôture.<br />Notre
-              mission :
-              préparer l’espace, la technique et la restauration pour que vos équipes n’aient plus qu’à arriver,
-              travailler et profiter.
-            </p>
+          <div class="w-full md:w-[70%]">
+            <div
+              class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
+              data-text-reveal>
+              <p class="mb-8">
+                Au 12, on accueille vos équipes pour vos journées et demi-journées professionnelles : séminaires,
+                formations, ateliers de travail, comités de direction, lancements de projet, etc. Vous choisissez
+                d’abord
+                : demi-journée ou journée, salle seule ou salle + restauration. Ensuite, vous ajoutez à la carte les
+                temps
+                qui vous intéressent : petit-déjeuner, déjeuner, pause de l’après-midi, verre de clôture.<br />Notre
+                mission :
+                préparer l’espace, la technique et la restauration pour que vos équipes n’aient plus qu’à arriver,
+                travailler et profiter.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -139,8 +165,7 @@
     <section class="bg-white text-[#1A1A1A] font-nm-regular" data-sticky-feature-wrap>
       <div class="relative w-full">
         <!-- Container principal avec padding pour mobile et desktop -->
-        <div
-          class="flex flex-col lg:flex-row lg:min-h-screen items-center lg:items-center py-24 md:py-48">
+        <div class="flex flex-col lg:flex-row lg:min-h-screen items-center lg:items-center py-24 md:py-48">
           <div class="mx-auto grid w-[90%] max-w-[1440px] grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-[4em]">
 
             <!-- COL GAUCHE (VISUELS) - Sticky sur Desktop -->
@@ -173,7 +198,7 @@
                   </div>
                 </div>
 
-                                <!-- ITEM 04 -->
+                <!-- ITEM 04 -->
                 <div data-sticky-feature-visual-wrap
                   class="absolute inset-0 flex h-full w-full items-center justify-center bg-white [clip-path:inset(100%_0_0%_0)]">
                   <div
@@ -197,17 +222,18 @@
                 <!-- TEXTE 01 -->
                 <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-100">
                   <span data-sticky-feature-text
-                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 01</span>
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] text-[#555555]">/ 01</span>
 
                   <h2 data-sticky-feature-text data-text-reveal
                     class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
-                   L’ESPACE BRUT
+                    L’ESPACE BRUT
                   </h2>
 
                   <p data-sticky-feature-text data-text-reveal
                     class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
-                    “Plateau de 200 m², lumière naturelle et structure industrielle préservée. Un terrain de jeu neutre à
-transformer selon votre journée.”
+                    “Plateau de 200 m², lumière naturelle et structure industrielle préservée. Un terrain de jeu neutre
+                    à
+                    transformer selon votre journée.”
                   </p>
 
                   <!-- <div data-sticky-feature-text
@@ -219,7 +245,7 @@ transformer selon votre journée.”
                 <!-- TEXTE 02 -->
                 <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-0">
                   <span data-sticky-feature-text
-                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 02</span>
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] text-[#555555]">/ 02</span>
 
                   <h2 data-sticky-feature-text data-text-reveal
                     class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
@@ -228,7 +254,8 @@ transformer selon votre journée.”
 
                   <p data-sticky-feature-text data-text-reveal
                     class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
-                    U, classe ou théâtre : on installe la salle selon votre format de travail et le nombre de participants.
+                    U, classe ou théâtre : on installe la salle selon votre format de travail et le nombre de
+                    participants.
                   </p>
 
                   <!-- <div data-sticky-feature-text
@@ -241,7 +268,7 @@ transformer selon votre journée.”
                 <!-- TEXTE 03 -->
                 <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-0">
                   <span data-sticky-feature-text
-                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 03</span>
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] text-[#555555]">/ 03</span>
 
                   <h2 data-sticky-feature-text data-text-reveal
                     class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
@@ -250,8 +277,9 @@ transformer selon votre journée.”
 
                   <p data-sticky-feature-text data-text-reveal
                     class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
-                    Tables en îlots, matériel à disposition : idéal pour les ateliers, brainstormings et sessions en petits
-groupes.
+                    Tables en îlots, matériel à disposition : idéal pour les ateliers, brainstormings et sessions en
+                    petits
+                    groupes.
                   </p>
 
                   <!-- <div data-sticky-feature-text
@@ -264,7 +292,7 @@ groupes.
                 <!-- TEXTE 04 -->
                 <div data-sticky-feature-item class="absolute top-0 left-0 w-full flex flex-col items-left opacity-0">
                   <span data-sticky-feature-text
-                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] opacity-60">/ 04</span>
+                    class="mb-4 lg:mb-6 block font-mono text-[0.8rem] lg:text-[0.9rem] text-[#555555]">/ 04</span>
 
                   <h2 data-sticky-feature-text data-text-reveal
                     class="mb-4 lg:mb-6 text-[2rem] lg:text-[3rem] leading-none uppercase">
@@ -273,8 +301,9 @@ groupes.
 
                   <p data-sticky-feature-text data-text-reveal
                     class="mb-6 lg:mb-8 max-w-[400px] text-[1rem] lg:text-[1.1rem] leading-[1.5] text-[#444]">
-                    Petit-déjeuner, déjeuner ou verre de clôture : on prolonge la journée autour d’un moment informel avec
-votre équipe.
+                    Petit-déjeuner, déjeuner ou verre de clôture : on prolonge la journée autour d’un moment informel
+                    avec
+                    votre équipe.
                   </p>
 
                   <!-- <div data-sticky-feature-text
@@ -299,7 +328,8 @@ votre équipe.
 
 
     <!-- NOS FORMULES -->
-    <section id="formulas-trigger" data-bgcolor="dark" class="bg-[var(--grey)] text-[var(--white)] px-[5vw] py-24 md:py-48">
+    <section id="formulas-trigger" data-bgcolor="dark"
+      class="bg-[var(--grey)] text-[var(--white)] px-[5vw] py-24 md:py-48">
       <div class="mb-20">
         <h2 data-text-reveal
           class="text-white font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl">
@@ -358,7 +388,7 @@ votre équipe.
 
           </div>
 
-          <button data-open-contact
+          <button data-open-contact aria-label="En savoir plus sur la location simple"
             class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
             <span>En savoir plus</span>
             <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
@@ -425,7 +455,7 @@ votre équipe.
 
           </div>
 
-          <button data-open-contact
+          <button data-open-contact aria-label="En savoir plus sur les packs séminaires"
             class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
             <span>En savoir plus</span>
             <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
@@ -515,7 +545,7 @@ votre équipe.
             </p>
           </div>
 
-          <button data-open-contact
+          <button data-open-contact aria-label="En savoir plus sur l'option restauration"
             class="group bg-[#E5E5E5] w-full border-none cursor-pointer px-10 py-6 flex items-center justify-between font-mono text-[0.85rem] font-semibold tracking-[0.05em] uppercase rounded-b-[4px] transition-colors duration-200 hover:bg-[#d4d4d4]">
             <span>En savoir plus</span>
             <span class="text-[1.2rem] transform transition-transform duration-200 group-hover:translate-x-[5px]">
@@ -544,167 +574,161 @@ votre équipe.
 
     <!-- LOCALISATION -->
     <section class="w-full min-h-dvh bg-white px-[5vw] py-24 md:py-48">
-      <h1 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
+      <h2 class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl
           mb-6 md:mb-12 pt-24 pb-12" data-text-reveal>
         Au coeur de tout
-      </h1>
+        </h1>
 
-      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
 
-        <div class="w-full md:w-[20%] pt-2">
-          <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
-            / Localisation
-          </span>
-        </div>
+          <div class="w-full md:w-[20%] pt-2">
+            <span class="block font-mono text-xs uppercase tracking-[0.05em] text-[#11111185]" data-text-reveal>
+              / Localisation
+            </span>
+          </div>
 
-        <div class="w-full md:w-[70%]">
-          <div
-            class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
-            data-text-reveal>
-            <p class="mb-8">
-              Idéalement situé en plein centre de Dunkerque, le 12 se trouve à quelques minutes à pied de la gare, des
-              hôtels et des principales rues commerçantes.
-              Vos équipes arrivent en train, en bus ou en voiture, puis terminent le trajet à pied depuis la gare,
-              l’arrêt de bus ou les parkings voisins.
-              Plusieurs parkings publics se trouvent autour du lieu et l’ensemble du réseau de bus de Dunkerque est
-              gratuit. Des taxis sont également disponibles en continu devant la gare.
-            </p>
+          <div class="w-full md:w-[70%]">
+            <div
+              class="text-[#2B2B2B] text-xl md:text-2xl leading-[130%] font-normal indent-[20%] [&>p]:indent-0 [&>p:first-child]:indent-[20%]"
+              data-text-reveal>
+              <p class="mb-8">
+                Idéalement situé en plein centre de Dunkerque, le 12 se trouve à quelques minutes à pied de la gare, des
+                hôtels et des principales rues commerçantes.
+                Vos équipes arrivent en train, en bus ou en voiture, puis terminent le trajet à pied depuis la gare,
+                l’arrêt de bus ou les parkings voisins.
+                Plusieurs parkings publics se trouvent autour du lieu et l’ensemble du réseau de bus de Dunkerque est
+                gratuit. Des taxis sont également disponibles en continu devant la gare.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
 
 
-      <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mt-12 md:mt-24">
-        <div class="hidden md:block w-full md:w-[20%]"></div>
-        <div class="w-full md:w-[70%]">
-          <div data-follower-wrap class="preview-container ">
-            <!-- En-têtes -->
-            <div class="preview-item__row tabelt--hide">
-              <div class="preview-item__col is--large"><span class="preview-container__label">Lieu</span></div>
-              <div class="preview-item__col is--small"><span class="preview-container__label">Temps</span></div>
-            </div>
-            <!-- La liste des items -->
-            <div data-follower-collection class="preview-collection">
-              <div class="preview-list">
-                <!-- Item 1: Gare -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Gare de Dunkerque</h2>
+        <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mt-12 md:mt-24">
+          <div class="hidden md:block w-full md:w-[20%]"></div>
+          <div class="w-full md:w-[70%]">
+            <div data-follower-wrap class="preview-container ">
+              <!-- En-têtes -->
+              <div class="preview-item__row tabelt--hide">
+                <div class="preview-item__col is--large"><span class="preview-container__label">Lieu</span></div>
+                <div class="preview-item__col is--small"><span class="preview-container__label">Temps</span></div>
+              </div>
+              <!-- La liste des items -->
+              <div data-follower-collection class="preview-collection">
+                <div class="preview-list">
+                  <!-- Item 1: Gare -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Gare de Dunkerque</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">12 min à pied</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">12 min à pied</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/gare_de_dunkerque.jpg" class="preview-item__visual-img"
+                          alt="Gare de Dunkerque" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/gare_de_dunkerque.jpg"
-                        class="preview-item__visual-img" alt="Gare de Dunkerque">
                     </div>
                   </div>
-                </div>
-                <!-- Item 2: Centre-ville -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Centre-ville piéton</h2>
+                  <!-- Item 2: Centre-ville -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Centre-ville piéton</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">8 min à pied</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">8 min à pied</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/centre_ville.jpg" class="preview-item__visual-img"
+                          alt="Centre-ville piéton" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/centre_ville.jpg"
-                        class="preview-item__visual-img" alt="Centre-ville piéton">
                     </div>
                   </div>
-                </div>
-                <!-- Item 3: Parking Théâtre -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Parking du Théâtre</h2>
+                  <!-- Item 3: Parking Théâtre -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Parking du Théâtre</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">6 min à pied</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">6 min à pied</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/parking_theatre.jpeg" class="preview-item__visual-img"
+                          alt="Parking du Théâtre" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/parking_theatre.jpeg"
-                        class="preview-item__visual-img" alt="Parking du Théâtre">
                     </div>
                   </div>
-                </div>
-                <!-- Item 4: Parking Souterrain -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Parking souterrain <br class="md:hidden"/>(Jean-Bart)</h2>
+                  <!-- Item 4: Parking Souterrain -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Parking souterrain <br class="md:hidden" />(Jean-Bart)</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">6 min à pied</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">6 min à pied</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/parking_jb.jpg" class="preview-item__visual-img"
+                          alt="Parking Jean-Bart" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/parking_jb.jpg"
-                        class="preview-item__visual-img" alt="Parking Jean-Bart">
                     </div>
                   </div>
-                </div>
-                <!-- Item 5: Plage -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Plage de <br class="md:hidden"/>Malo-les-Bains</h2>
+                  <!-- Item 5: Plage -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Plage de <br class="md:hidden" />Malo-les-Bains</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">10 min voiture / bus</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">10 min voiture / bus</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/plage_malo_les_bains.png" class="preview-item__visual-img"
+                          alt="Plage de Malo-les-Bains" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/plage_malo_les_bains.png"
-                        class="preview-item__visual-img" alt="Plage de Malo-les-Bains">
                     </div>
                   </div>
-                </div>
-                <!-- Item 6: Port -->
-                <div data-follower-item class="preview-item">
-                  <div class="preview-item__inner w-inline-block">
-                    <div class="preview-item__row">
-                      <div class="preview-item__col is--large">
-                        <h2 class="preview-item__heading">Port & Musée portuaire</h2>
+                  <!-- Item 6: Port -->
+                  <div data-follower-item class="preview-item">
+                    <div class="preview-item__inner w-inline-block">
+                      <div class="preview-item__row">
+                        <div class="preview-item__col is--large">
+                          <h2 class="preview-item__heading">Port & Musée portuaire</h2>
+                        </div>
+                        <div class="preview-item__col is--small">
+                          <p class="preview-item__text">15 min à pied</p>
+                        </div>
                       </div>
-                      <div class="preview-item__col is--small">
-                        <p class="preview-item__text">15 min à pied</p>
+                      <div data-follower-visual class="preview-item__visual">
+                        <img src="/src/assets/images/musee_portuaire_dunkerque.jpg" class="preview-item__visual-img"
+                          alt="Port et Musée" loading="lazy">
                       </div>
-                    </div>
-                    <div data-follower-visual class="preview-item__visual">
-                      <img
-                        src="/src/assets/images/musee_portuaire_dunkerque.jpg"
-                        class="preview-item__visual-img" alt="Port et Musée">
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Le curseur (suiveur) -->
-            <div data-follower-cursor class="preview-follower">
-              <div data-follower-cursor-inner class="preview-follower__inner">
+              <!-- Le curseur (suiveur) -->
+              <div data-follower-cursor class="preview-follower">
+                <div data-follower-cursor-inner class="preview-follower__inner">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -713,11 +737,11 @@ votre équipe.
 
       <!-- Titre Section -->
       <div class="mb-12 md:mb-24 px-[5vw]">
-        <h1
+        <h2
           class="text-[#2B2B2B] font-bold font-nm-medium uppercase tracking-[-0.01em] leading-[95%] text-[1.8rem] md:text-7xl"
           data-text-reveal>
           Nos Partenaires
-        </h1>
+          </h1>
       </div>
 
       <!-- La Grille -->
@@ -726,52 +750,53 @@ votre équipe.
            ICi astuce simple : border-t et border-l sur le container, et border-r et border-b sur les items -->
 
       <!-- La Grille Animée -->
-      <div class="w-full border-t border-[var(--black)] border-opacity-10 overflow-hidden">
+      <div class="w-full border-t border-[var(--black)] border-opacity-10 overflow-hidden" role="region"
+        aria-label="Liste des partenaires">
 
         <!-- Row 1: Scroll Left -->
         <div class="partners-row-left flex w-full border-b border-[var(--black)] border-opacity-10 overflow-hidden">
           <!-- Content wrapper for animation -->
-          <div class="partners-track flex shrink-0 will-change-transform">
-            <div
+          <ul class="partners-track flex shrink-0 will-change-transform list-none p-0 m-0">
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Google</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Spotify</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Nike</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Arte</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
         <!-- Row 2: Scroll Right -->
         <div class="partners-row-right flex w-full border-b border-[var(--black)] border-opacity-10 overflow-hidden">
           <!-- Content wrapper for animation -->
-          <div class="partners-track flex shrink-0 will-change-transform">
-            <div
+          <ul class="partners-track flex shrink-0 will-change-transform list-none p-0 m-0">
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Havas</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Ubisoft</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Canal+</span>
-            </div>
-            <div
+            </li>
+            <li
               class="w-[50vw] md:w-[25vw] aspect-square flex items-center justify-center border-r border-[var(--black)] border-opacity-10 p-8 hover:bg-white/50 transition-colors duration-300">
               <span class="font-nm-medium text-xl md:text-2xl uppercase tracking-widest opacity-80">Dunk.</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -800,7 +825,7 @@ votre équipe.
           <!-- Contact Info -->
           <div class="flex flex-col gap-12 md:text-right mt-12 md:mt-0">
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-[0.65rem] tracking-[0.15em] opacity-40 uppercase">Email</span>
+              <span class="font-mono text-[0.65rem] tracking-[0.15em] text-[#555555] uppercase">Email</span>
               <a href="mailto:contact@le12dunkerque.com"
                 class="text-xl md:text-2xl font-nm-regular hover:opacity-60 transition-opacity">
                 contact@le12dunkerque.com
@@ -808,7 +833,7 @@ votre équipe.
             </div>
 
             <div class="flex flex-col gap-2">
-              <span class="font-mono text-[0.65rem] tracking-[0.15em] opacity-40 uppercase">Téléphone</span>
+              <span class="font-mono text-[0.65rem] tracking-[0.15em] text-[#555555] uppercase">Téléphone</span>
               <a href="tel:+33600000000"
                 class="text-xl md:text-2xl font-nm-regular hover:opacity-60 transition-opacity">
                 +33 6 00 00 00 00
@@ -819,7 +844,7 @@ votre équipe.
 
         <!-- Bottom footer -->
         <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mt-24 pt-8 border-t border-white/10 opacity-60">
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mt-24 pt-8 border-t border-white/10 text-white/60">
           <span class="font-mono text-[0.7rem] tracking-[0.1em] uppercase">
             © 2025 Le Douze Dunkerque
           </span>
@@ -855,8 +880,8 @@ votre équipe.
           class="relative bg-white text-gray-900 w-[90%] max-w-[700px] max-h-[90vh] overflow-y-auto p-8 md:p-16 rounded shadow-2xl translate-y-8 transition-transform duration-300 group-[.is-open]:translate-y-0">
 
           <!-- Bouton Fermer -->
-          <button class="absolute top-8 right-8 text-3xl hover:opacity-60 transition-opacity"
-            data-close-contact>✕</button>
+          <button class="absolute top-8 right-8 text-3xl hover:opacity-60 transition-opacity" data-close-contact
+            aria-label="Fermer">✕</button>
           <!-- Header -->
           <div class="mb-12">
             <h2 class="text-3xl md:text-5xl font-medium mb-4 leading-tight">Réservez votre événement</h2>
@@ -868,33 +893,38 @@ votre équipe.
             <!-- Rangée 1 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Nom complet *</label>
-                <input type="text" required placeholder="Jean Dupont"
+                <label for="contact-name" class="text-xs uppercase tracking-wider opacity-70 font-medium">Nom complet
+                  *</label>
+                <input id="contact-name" type="text" required placeholder="Jean Dupont"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Entreprise</label>
-                <input type="text" placeholder="Nom de l'entreprise"
+                <label for="contact-company"
+                  class="text-xs uppercase tracking-wider opacity-70 font-medium">Entreprise</label>
+                <input id="contact-company" type="text" placeholder="Nom de l'entreprise"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
             </div>
             <!-- Rangée 2 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Email *</label>
-                <input type="email" required placeholder="jean@exemple.fr"
+                <label for="contact-email" class="text-xs uppercase tracking-wider opacity-70 font-medium">Email
+                  *</label>
+                <input id="contact-email" type="email" required placeholder="jean@exemple.fr"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Téléphone</label>
-                <input type="tel" placeholder="+33 6 12 34 56 78"
+                <label for="contact-phone"
+                  class="text-xs uppercase tracking-wider opacity-70 font-medium">Téléphone</label>
+                <input id="contact-phone" type="tel" placeholder="+33 6 12 34 56 78"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
             </div>
             <!-- Select -->
             <div class="flex flex-col gap-2">
-              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Type d'événement</label>
-              <select
+              <label for="contact-type" class="text-xs uppercase tracking-wider opacity-70 font-medium">Type
+                d'événement</label>
+              <select id="contact-type"
                 class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full appearance-none">
                 <option>Sélectionnez une formule</option>
                 <option>Location Sèche</option>
@@ -905,24 +935,28 @@ votre équipe.
             <!-- Rangée 3 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Date souhaitée</label>
-                <input type="date"
+                <label for="contact-date" class="text-xs uppercase tracking-wider opacity-70 font-medium">Date
+                  souhaitée</label>
+                <input id="contact-date" type="date"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
               <div class="flex flex-col gap-2">
-                <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Horaire souhaité</label>
-                <input type="time" placeholder="Ex: 14:00"
+                <label for="contact-time" class="text-xs uppercase tracking-wider opacity-70 font-medium">Horaire
+                  souhaité</label>
+                <input id="contact-time" type="time" placeholder="Ex: 14:00"
                   class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
               </div>
             </div>
             <div class="flex flex-col gap-2">
-              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Nombre de participants</label>
-              <input type="number" placeholder="Ex: 50"
+              <label for="contact-attendees" class="text-xs uppercase tracking-wider opacity-70 font-medium">Nombre de
+                participants</label>
+              <input id="contact-attendees" type="number" placeholder="Ex: 50"
                 class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full">
             </div>
             <div class="flex flex-col gap-2">
-              <label class="text-xs uppercase tracking-wider opacity-70 font-medium">Message</label>
-              <textarea rows="4" placeholder="Décrivez-nous votre projet..."
+              <label for="contact-message"
+                class="text-xs uppercase tracking-wider opacity-70 font-medium">Message</label>
+              <textarea id="contact-message" rows="4" placeholder="Décrivez-nous votre projet..."
                 class="p-4 border border-black/10 bg-black/5 text-base focus:outline-none focus:border-black transition-colors w-full"></textarea>
             </div>
             <button type="submit"
