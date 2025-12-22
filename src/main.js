@@ -168,6 +168,11 @@ initContactPopup();
 initTextReveal(); // <-- Ajouter ici
 initParallaxImages();
 
+// Force refresh after load to ensure accurate start/end positions
+window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+});
+
 // Force refresh after all triggers are set up
 ScrollTrigger.refresh();
 
