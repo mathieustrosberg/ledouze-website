@@ -401,9 +401,9 @@ function initFooterParallax() {
             });
 
             if (inner) {
-                // On mobile, less drastic movement to avoid clipping issues if text is at top
+                // On restoring dramatic movement for mobile as requested
                 tl.fromTo(inner,
-                    { yPercent: -20 },
+                    { yPercent: -50 },
                     { yPercent: 0, ease: 'none' }
                 );
             }

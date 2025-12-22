@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(CustomEase);
 
@@ -58,15 +59,16 @@ export function initLoader(lenis) {
             document.body.style.overflow = ''; // Re-enable scrolling
             document.documentElement.style.overflow = '';
             if (lenis) lenis.start();
+            ScrollTrigger.refresh();
         }
     })
-    .set(wrap, { display: "block" })
-    .to(progressBar, { scaleX: 1 })
-    .to(logo, { clipPath: "inset(0% 0% 0% 0%)" }, "<")
-    .to(container, { autoAlpha: 0, duration: 0.5 })
-    .to(progressBar, { scaleX: 0, transformOrigin: "right center", duration: 0.5 }, "<")
-    .add("hideContent", "<")
-    .to(bg, { yPercent: -101, duration: 1 }, "hideContent");
+        .set(wrap, { display: "block" })
+        .to(progressBar, { scaleX: 1 })
+        .to(logo, { clipPath: "inset(0% 0% 0% 0%)" }, "<")
+        .to(container, { autoAlpha: 0, duration: 0.5 })
+        .to(progressBar, { scaleX: 0, transformOrigin: "right center", duration: 0.5 }, "<")
+        .add("hideContent", "<")
+        .to(bg, { yPercent: -101, duration: 1 }, "hideContent");
 
     if (resetTargets.length) {
         loadTimeline.set(resetTargets, { autoAlpha: 1 }, 0);
