@@ -356,65 +356,63 @@ function initRowMarquees() {
     setupRow(rightRow, 'right');
 }
 
-function initFooterParallax() {
-    const mm = gsap.matchMedia();
+// function initFooterParallax() {
+//     document.querySelectorAll('[data-footer-parallax]').forEach(el => {
+//         const footer = el.querySelector('footer');
+//         const inner = el.querySelector('[data-footer-parallax-inner]');
+//         const dark = el.querySelector('[data-footer-parallax-dark]');
 
+//         const tl = gsap.timeline({
+//             scrollTrigger: {
+//                 trigger: el,
+//                 start: 'top bottom',
+//                 end: 'bottom bottom',
+//                 scrub: true
+//             }
+//         });
+
+//         if (inner) {
+//             tl.from(inner, {
+//                 yPercent: -50,
+//                 ease: 'linear'
+//             });
+//         }
+
+//         if (dark) {
+//             tl.from(dark, {
+//                 opacity: 0.5,
+//                 ease: 'linear'
+//             }, '<');
+//         }
+//     });
+// }
+function initFooterParallax() {
     document.querySelectorAll('[data-footer-parallax]').forEach(el => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: el,
+                start: 'clamp(top bottom)',
+                end: 'clamp(top top)',
+                scrub: true
+            }
+        });
+
         const inner = el.querySelector('[data-footer-parallax-inner]');
         const dark = el.querySelector('[data-footer-parallax-dark]');
 
-        // Desktop
-        mm.add("(min-width: 768px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: el,
-                    start: 'clamp(top bottom)',
-                    end: 'clamp(bottom bottom)', // End when bottom of footer hits bottom of screen
-                    scrub: true
-                }
+        if (inner) {
+            tl.from(inner, {
+                yPercent: -25,
+                ease: 'linear'
             });
+        }
 
-            if (inner) {
-                tl.fromTo(inner,
-                    { yPercent: -50 }, // More dramatic start on desktop
-                    { yPercent: 0, ease: 'none' }
-                );
-            }
-            if (dark) {
-                tl.fromTo(dark,
-                    { opacity: 0.8 },
-                    { opacity: 0, ease: 'none' },
-                    '<'
-                );
-            }
-        });
-
-        // Mobile
-        mm.add("(max-width: 767px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: el,
-                    start: 'top bottom', // Start as soon as it enters viewport
-                    end: 'bottom bottom',
-                    scrub: 0.5 // Add a little smoothness
-                }
-            });
-
-            if (inner) {
-                // On restoring dramatic movement for mobile as requested
-                tl.fromTo(inner,
-                    { yPercent: -50 },
-                    { yPercent: 0, ease: 'none' }
-                );
-            }
-            if (dark) {
-                tl.fromTo(dark,
-                    { opacity: 0.6 },
-                    { opacity: 0, ease: 'none' },
-                    '<'
-                );
-            }
-        });
+        if (dark) {
+            tl.from(dark, {
+                opacity: 0.5,
+                ease: 'linear'
+            }, '<');
+        }
     });
 }
 
