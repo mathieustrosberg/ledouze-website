@@ -175,7 +175,7 @@ function initParallaxImages() {
     const images = document.querySelectorAll('[data-parallax-img]');
     images.forEach(img => {
         // Le parent doit avoir overflow: hidden (c'est le cas ici)
-        gsap.fromTo(img, 
+        gsap.fromTo(img,
             {
                 scale: 1.3, // Plus grand zoom au départ
                 yPercent: -15 // Départ plus haut
@@ -233,21 +233,21 @@ function initStickyFeature() {
         // Explicitly set initial states to ensure consistency
         visuals.forEach((v, i) => {
             if (i === 0) {
-                 gsap.set(v, { clipPath: 'inset(0% 0% 0% 0%)' });
+                gsap.set(v, { clipPath: 'inset(0% 0% 0% 0%)' });
             } else {
-                 gsap.set(v, { clipPath: 'inset(100% 0% 0% 0%)' });
+                gsap.set(v, { clipPath: 'inset(100% 0% 0% 0%)' });
             }
         });
-        
+
         items.forEach((item, i) => {
-             if (i === 0) {
-                 gsap.set(item, { opacity: 1 });
-                 // Ensure children are visible
-                 gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 1, y: 0 });
-             } else {
-                 gsap.set(item, { opacity: 0 });
-                 gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 0, y: 30 });
-             }
+            if (i === 0) {
+                gsap.set(item, { opacity: 1 });
+                // Ensure children are visible
+                gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 1, y: 0 });
+            } else {
+                gsap.set(item, { opacity: 0 });
+                gsap.set(item.querySelectorAll('[data-sticky-feature-text]'), { opacity: 0, y: 30 });
+            }
         });
 
         // Pin the entire section
@@ -352,32 +352,64 @@ function initRowMarquees() {
 }
 
 function initFooterParallax() {
-    document.querySelectorAll('[data-footer-parallax]').forEach(el => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: el,
-                start: 'clamp(top bottom)',
-                end: 'clamp(top top)',
-                scrub: true
-            }
-        });
+    const mm = gsap.matchMedia();
 
+    document.querySelectorAll('[data-footer-parallax]').forEach(el => {
         const inner = el.querySelector('[data-footer-parallax-inner]');
         const dark = el.querySelector('[data-footer-parallax-dark]');
 
-        if (inner) {
-            tl.from(inner, {
-                yPercent: -25,
-                ease: 'linear'
+        // Desktop
+        mm.add("(min-width: 768px)", () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'clamp(top bottom)',
+                    end: 'clamp(bottom bottom)', // End when bottom of footer hits bottom of screen
+                    scrub: true
+                }
             });
-        }
 
-        if (dark) {
-            tl.from(dark, {
-                opacity: 0.5,
-                ease: 'linear'
-            }, '<');
-        }
+            if (inner) {
+                tl.fromTo(inner,
+                    { yPercent: -50 }, // More dramatic start on desktop
+                    { yPercent: 0, ease: 'none' }
+                );
+            }
+            if (dark) {
+                tl.fromTo(dark,
+                    { opacity: 0.8 },
+                    { opacity: 0, ease: 'none' },
+                    '<'
+                );
+            }
+        });
+
+        // Mobile
+        mm.add("(max-width: 767px)", () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top bottom', // Start as soon as it enters viewport
+                    end: 'bottom bottom',
+                    scrub: 0.5 // Add a little smoothness
+                }
+            });
+
+            if (inner) {
+                // On mobile, less drastic movement to avoid clipping issues if text is at top
+                tl.fromTo(inner,
+                    { yPercent: -20 },
+                    { yPercent: 0, ease: 'none' }
+                );
+            }
+            if (dark) {
+                tl.fromTo(dark,
+                    { opacity: 0.6 },
+                    { opacity: 0, ease: 'none' },
+                    '<'
+                );
+            }
+        });
     });
 }
 
