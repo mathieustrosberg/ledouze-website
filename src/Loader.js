@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(CustomEase);
 
-// Helper to split text into chars (Alternative to SplitText)
+// Text Splitter Utility
 function splitTextToChars(element) {
     const text = element.textContent;
     element.innerHTML = '';
@@ -26,12 +26,12 @@ export function initLoader(lenis) {
     document.documentElement.style.overflow = 'hidden';
     if (lenis) lenis.stop();
 
-    // Defines the custom easing
+    // Custom Easing
     CustomEase.create("loader", "0.65, 0.01, 0.05, 0.99");
 
     const wrap = document.querySelector("[data-load-wrap]");
     if (!wrap) {
-        document.body.style.overflow = ''; // Release if no loader
+        document.body.style.overflow = '';
         document.documentElement.style.overflow = '';
         if (lenis) lenis.start();
         return;
@@ -43,12 +43,11 @@ export function initLoader(lenis) {
     const logo = wrap.querySelector("[data-load-logo]");
     const textElements = Array.from(wrap.querySelectorAll("[data-load-text]"));
 
-    // Reset targets
     const resetTargets = Array.from(
         wrap.querySelectorAll('[data-load-reset]:not([data-load-text])')
     );
 
-    // Timeline
+    // Timeline Animation
     const loadTimeline = gsap.timeline({
         defaults: {
             ease: "loader",
@@ -56,7 +55,7 @@ export function initLoader(lenis) {
         },
         onComplete: () => {
             wrap.style.display = "none";
-            document.body.style.overflow = ''; // Re-enable scrolling
+            document.body.style.overflow = '';
             document.documentElement.style.overflow = '';
             if (lenis) lenis.start();
             ScrollTrigger.refresh();
@@ -98,3 +97,4 @@ export function initLoader(lenis) {
         }, "hideContent-=0.5");
     }
 }
+
